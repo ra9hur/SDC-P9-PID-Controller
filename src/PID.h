@@ -1,6 +1,9 @@
 #ifndef PID_H
 #define PID_H
 
+// #include <iostream>
+// #include <vector>
+
 class PID {
 public:
   /*
@@ -18,6 +21,16 @@ public:
   double Kd;
 
   /*
+  * Momentum speed variables for parameters
+  */ 
+  //double Mp;
+  //double Mi;
+  //double Md;
+
+  // vector<double> avg_cte (10,0.);
+  //std::vector<double> totErr_n;
+
+  /*
   * Constructor
   */
   PID();
@@ -30,7 +43,7 @@ public:
   /*
   * Initialize PID.
   */
-  void Init(double Kp, double Ki, double Kd);
+  void Init(double Kp_, double Ki_, double Kd_);
 
   /*
   * Update the PID error variables given cross track error.
@@ -41,6 +54,11 @@ public:
   * Calculate the total PID error.
   */
   double TotalError();
+
+  /*
+  * Compute control gains dynamically
+  */
+  void GradDesc();
 };
 
 #endif /* PID_H */
