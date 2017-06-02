@@ -49,6 +49,6 @@ To simulate human behaviour, throttle and brakes are applied depending on the st
 
 ## Smoothening the steering angle
 
-Varying steering angles could result in car oscillating. Initial guess to reduce oscillations was to take average of last 5 steering value outputs. This, however caused more oscillations. The reason could be that averaging may already have been factored in PID equations and hence applying this again should be pointless.
+Successive steering angles could result in car to oscillate. Intuitive guess to reduce oscillations would be, to take average of last 5 steering value outputs. This, however caused more oscillations. The reason could be that averaging may already have been factored in PID equations and hence applying this again should be pointless.
 
 ---
